@@ -1,0 +1,13 @@
+.logo {height: 75px;
+    width: 75px;
+    background-color: aquamarine;
+    border-radius: 50%;
+    background-image: url(https://picsum.photos/200);
+    background-size: cover;
+}
+
+.main-header {display: flex;
+    justify-content: space-between;
+    align-items: center;}
+
+    
