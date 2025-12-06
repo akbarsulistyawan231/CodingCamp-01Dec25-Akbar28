@@ -5,33 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Akbar</title>
 
+    <!-- Favicon ICO -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
     <!-- CSS External --> 
     <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
     
     <!-- Header -->
-    <header class="main-header"></header>
+    <header class="main-header p-[8px]">
         <!-- Logo -->
         <div class="logo"></div>
 
         <!-- Navigation -->
-        <nav>
-            <a href="">Home</a>
-            <a href="">Our Profile</a>
-            <a href="">Portfolio</a>
-            <a href="">Message Us</a>
+        <nav class="flex gap-[8px]">
+            <button class="border bg-blue-400 text-white px-[8px] py-[4px] rounded" onclick="navigateTo('home')">Home</button>
+            <button class="border bg-purple-400 text-white px-[8px] py-[4px] rounded" onclick="navigateTo('profile')">Our Profile</button>
+            <button class="border bg-orange-400 text-white px-[8px] py-[4px] rounded" onclick="navigateTo('portfolio')">Portfolio</button>
+            <button class="border bg-green-400 text-white px-[8px] py-[4px] rounded" onclick="navigateTo('message')">Message Us</button>
         </nav>
+     </header>
 
-
-
-    </header>
+<hr/>
 
     <!-- Main -->
-    <main></main>
+    <main>
+
+<!-- Home Page -->
+<section class="home-page text-center p-[16px]">
+    <h1 class="text-4xl font-bold mb-[8px]">Welcome to Our Website</h1>
+    <p class="text-lg mb-[16px]">Hi, I'm Akbar, a passionate developer.</p>
+    
+    <!-- Name Input -->
+    <div class="mb-[16px]">
+        <input class="border p-[8px] mb-[8px]" type="text" id="name-input" placeholder="Enter your name">
+        <button class="bg-blue-500 text-white px-[12px] py-[8px] rounded" onclick="welcomeMessage()">Get Welcome Speech</button>
+    </div>
+    
+    <!-- Welcome Speech Display -->
+    <div id="welcome-speech" class="text-lg font-semibold text-green-600 mt-[16px]"></div>
+</section>
+
+<hr/>
+
+<!-- Our Profile Page -->
+<section class="our-profile-page p-[16px]">
+    <h2 class="text-3xl font-semibold mb-[8px]">Our Profile</h2>
+    <p class="text-lg mb-[16px]">We are a team of dedicated professionals.</p>
+    <input class="border p-[8px] mb-[8px]" type="text" id="profile-input" placeholder="Enter your job title">
+    <button class="bg-purple-500 text-white px-[12px] py-[8px] rounded" onclick="validateProfile()">Check Profile</button>
+    <div id="profile-result" class="text-lg font-semibold text-purple-600 mt-[16px]"></div>
+</section>
+
+<hr/>
+
+<!-- Portfolio Page -->
+<section class="portfolio-page p-[16px]">
+    <h2 class="text-3xl font-semibold mb-[8px]">Our Portfolio</h2>
+    <div class="grid grid-cols-3 gap-[16px]">
+        <div class="portfolio-item border p-[8px]">Project 1</div>
+        <div class="portfolio-item border p-[8px]">Project 2</div>
+        <div class="portfolio-item border p-[8px]">Project 3</div>
+    </div>
+    <input class="border p-[8px] mb-[8px] mt-[16px]" type="number" id="project-id" placeholder="Enter project number (1-3)" min="1" max="3">
+    <button class="bg-orange-500 text-white px-[12px] py-[8px] rounded" onclick="validateProject()">View Project Details</button>
+    <div id="project-result" class="text-lg font-semibold text-orange-600 mt-[16px]"></div>
+</section>
+
+<hr/>
+
+<!-- Message Us Page -->
+<section class="message-us-page p-[16px]">
+    <h2 class="text-3xl font-semibold mb-[8px]">Message Us</h2>
+    <form class="flex flex-col max-w-md" onsubmit="handleMessageSubmit(event)">
+        <input class="border p-[8px] mb-[8px]" type="text" id="user-name" placeholder="Your Name" required>
+        <input class="border p-[8px] mb-[8px]" type="email" id="user-email" placeholder="Your Email" required>
+        <textarea class="border p-[8px] mb-[8px]" id="user-message" placeholder="Your Message" required></textarea>
+        <button class="bg-green-500 text-white px-[12px] py-[8px] rounded" type="submit">Send Message</button>
+    </form>
+    <div id="message-result" class="text-lg font-semibold text-blue-600 mt-[16px]"></div>
+</section>
+    
+</main>
 
     <!-- Footer -->
-    <footer></footer>
+    <footer>
+        <p class="text-center p-[8px]">© 2025 Akbar's Portfolio. All rights reserved.</p>
+    </footer>
 
 
     <!-- JS External -->

@@ -3,11 +3,12 @@
     background-color: aquamarine;
     border-radius: 50%;
     background-image: url(https://picsum.photos/200);
-    background-size: cover;
-}
+    background-size: cover;}
 
-.main-header {display: flex;
+    .main-header {
+    display: flex;
     justify-content: space-between;
-    align-items: center;}
+    align-items: center;
+}
 
     
